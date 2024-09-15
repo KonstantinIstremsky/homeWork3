@@ -84,31 +84,27 @@ public class Main {
         }
         System.out.println("Среднее время на похудение равно " + result / nums.length + " дню");
 
-        int masha = 67760;
-        int denis = 83690;
-        int kristina = 76230;
+        int masha = 67760; // доход в месяц
+        int denis = 83690; // доход в месяц
+        int kristina = 76230; // доход в месяц
 
-        int annualIncomeMasha = masha * 12;
-        int annualIncomeDenis = denis * 12;
-        int annualIncomeKristina = kristina * 12;
+        int annualIncomeMasha = masha * 12; // доход в год
+        int annualIncomeDenis = denis * 12; // доход в год
+        int annualIncomeKristina = kristina * 12; // доход в год
 
-        float salaryIncrease = 0.1F;
+        float salaryIncrease = 0.1F; // ап по зарплате в год (~10%)
 
-        float afterSalaryIncreaseMasha = (masha * salaryIncrease) * 12;
-        float afterSalaryIncreaseDenis = (denis * salaryIncrease) * 12;
-        float afterSalaryIncreaseKristina = (kristina * salaryIncrease) * 12;
+        float afterSalaryIncreaseMasha = ((masha * salaryIncrease) + masha) * 12; // годовая зарплата после апа 10%
+        float afterSalaryIncreaseDenis = ((denis * salaryIncrease) + denis) * 12; // годовая зарплата после апа 10%
+        float afterSalaryIncreaseKristina = ((kristina * salaryIncrease) + kristina) * 12; // годовая зарплата после апа 10%
 
-        float afterSalaryIncreaseMashaAnnualIncome = afterSalaryIncreaseMasha * 12;
-        float afterSalaryIncreaseDenisAnnualIncome = afterSalaryIncreaseDenis * 12;
-        float afterSalaryIncreaseKristinaAnnualIncome = afterSalaryIncreaseKristina * 12;
+        float differenceAfterSalaryIncreaseMasha = afterSalaryIncreaseMasha - annualIncomeMasha; // разница по зарплате между "до" и "после" повышения
+        float differenceAfterSalaryIncreaseDenis = afterSalaryIncreaseDenis - annualIncomeDenis; // разница по зарплате между "до" и "после" повышения
+        float differenceAfterSalaryIncreaseKristina = afterSalaryIncreaseKristina - annualIncomeKristina; // разница по зарплате между "до" и "после" повышения
 
-        float differenceAfterSalaryIncreaseMasha = afterSalaryIncreaseMashaAnnualIncome - annualIncomeMasha;
-        float differenceAfterSalaryIncreaseDenis = afterSalaryIncreaseDenisAnnualIncome - annualIncomeDenis;
-        float differenceAfterSalaryIncreaseKristina = afterSalaryIncreaseKristinaAnnualIncome - annualIncomeKristina;
-
-        System.out.println("Маша теперь получает " + afterSalaryIncreaseMasha + " рублей. Годовой доход вырос на " + differenceAfterSalaryIncreaseMasha + "рублей");
-        System.out.println("Денис теперь получает " + afterSalaryIncreaseKristina + " рублей. Годовой доход вырос на " + differenceAfterSalaryIncreaseDenis + "рублей");
-        System.out.println("Кристина теперь получает " + afterSalaryIncreaseKristina + " рублей. Годовой доход вырос на " + differenceAfterSalaryIncreaseKristina + "рублей");
+        System.out.println("Маша теперь получает " + afterSalaryIncreaseMasha + " рублей в год. Годовой доход вырос на " + differenceAfterSalaryIncreaseMasha + "рублей");
+        System.out.println("Денис теперь получает " + afterSalaryIncreaseDenis + " рублей в год. Годовой доход вырос на " + differenceAfterSalaryIncreaseDenis + "рублей");
+        System.out.println("Кристина теперь получает " + afterSalaryIncreaseKristina + " рублей в год. Годовой доход вырос на " + differenceAfterSalaryIncreaseKristina + "рублей");
 
 
     }
